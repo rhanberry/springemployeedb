@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Employee Index</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!--
+    Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $('.dropdown-toggle').dropdown();
+    });
+  </script>
+  <script type="text/javascript">
+    $.ajax({
+      url: '/employees',
+      method: 'GET'
+    }).then(function(employees) {
+      for (var i = 0; i < employees.length; i++) {
+        console.log(employees[i]);
+      }
+    });
+
+    var employee = {};
+    employee.firstname = "John";
+    employee.lastname = "Doe";
+
+    $.ajax({
+      url: '/employees',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(employee)
+    }).then(
+      function(employees) {
+        console.log("employee added");
+      }
+    );
+
+    // $.ajax({
+    //   url: '/employeeii',
+    //   method: 'POST',
+    //   contentType: 'application/JSON',
+    //   data: JSON.stringify(employee)
+    // }).then(
+    //   function(employees){
+    //     console.log("Employee Added");
+    //   },
+    //   function(error){
+    //     console.log(JSON.stringify(error));
+    //   }
+    // );
+  </script>
+
+</head>
+
+<body>
+  <ul class="nav nav-pills">
+    <li role="presentation"><a href="/create-e">Create Employee</a></li>
+    <li role="presentation"><a href="/remove-e">Delete Employee</a></li>
+    <li role="presentation"><a href="/update-e">Update Employee</a></li>
+  </ul>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Age</th>
+        <th>IsActive</th>
+      </tr>
+    </thead>
+  </table>
+</body>
+
+</html>

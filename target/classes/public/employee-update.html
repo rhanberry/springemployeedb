@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Employee Update</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $('.dropdown-toggle').dropdown();
+    });
+  </script>
+
+</head>
+
+<body>
+  <ul class="nav nav-pills">
+    <li role="presentation"><a href="/create-e">Create Employee</a></li>
+    <li role="presentation"><a href="/remove-e">Delete Employee</a></li>
+    <li role="presentation"><a href="/">Employee Index</a></li>
+  </ul>
+
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Menu
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">Select Employee</a></li>
+
+    </ul>
+  </div>
+  <div class="panel panel-primary" class="employeeNum">Employee:
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">Name</span>
+      <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">Age</span>
+      <input type="text" class="form-control" placeholder="Age" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">IsActive</span>
+      <input type="text" class="form-control" placeholder="IsActive" aria-describedby="basic-addon1">
+    </div>
+  </div>
+
+  <button type="button">Submit</button>
+
+</body>
+
+</html>
